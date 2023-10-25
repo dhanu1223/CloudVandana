@@ -1,0 +1,26 @@
+mport java.util.Random;
+
+public class ShuffleArray {
+    public static void main(String[] args) {
+        int[] originalArray = {1, 2, 3, 4, 5, 6, 7};
+
+        // Create an instance of Random for shuffling
+        Random random = new Random();
+
+        // Shuffle the array
+        for (int i = originalArray.length - 1; i > 0; i--) {
+            int index = random.nextInt(i + 1);
+
+            // Swap elements at index i and index
+            int temp = originalArray[i];
+            originalArray[i] = originalArray[index];
+            originalArray[index] = temp;
+        }
+
+        // Display the shuffled array
+        System.out.print("Shuffled Array: ");
+        for (int num : originalArray) {
+            System.out.print(num + " ");
+        }
+    }
+}
